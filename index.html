@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barrier-Control</title>
-
+  <title>NFC-Code Export</title>
 </head>
 <body>
-      <form action="barrierControl.php"></form>
+  <h1>NFC-Code Export</h1>
+
+  <form id="exportForm">
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" required><br><br>
+
+    <button type="button" onclick="exportCSV()">Exportieren</button>
+  </form>
+
+  <script>
+    function exportCSV() {
+      var name = document.getElementById("nameInput").value;
+      var nfcCode = "NFC-Code-hier-einlesen"; // Hier NFC-Code einlesen oder generieren
+
+      var csvContent = "Name,NFC-Code\n" + name + "," + nfcCode + "\n";
+      var encodedUri = encodeURI("data:text/csv;charset=utf-8," + csvContent);
+      var link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", "export.csv");
+      document.body.appendChild(link);
+      link.click();
+    }
+  </script>
 </body>
 </html>

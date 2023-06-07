@@ -97,7 +97,7 @@ class AdminInterface {
 $admin = new AdminInterface();
 
 // Kunden hinzufügen
-$admin->addCustomer(1, "Max", "Mustermann");
+$admin->addCustomer(1, "Max", "Mustermann")."\n";
 $admin->addCustomer(2, "Erika", "Musterfrau");
 
 // NFC-User hinzufügen
@@ -106,6 +106,7 @@ $admin->addNFCUser(2, 1002);
 
 // Kunden und NFC-User anzeigen
 $admin->displayCustomers();
+
 
 // NFC-User entfernen
 $admin->removeNFCUser($admin->customers[0]);
