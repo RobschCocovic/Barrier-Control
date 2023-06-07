@@ -9,14 +9,18 @@
   <form id="exportForm">
     <label for="nameInput">Name:</label>
     <input type="text" id="nameInput" required><br><br>
-
+    <label for="nfcInput">NFC-Code:</label>
+    <input type="text" id="nfcInput" required><br><br>
+    
+    <!--Button für das Exportieren der Values-->
     <button type="button" onclick="exportCSV()">Exportieren</button>
   </form>
 
+  <!--Funktion für den Button-->
   <script>
     function exportCSV() {
       var name = document.getElementById("nameInput").value;
-      var nfcCode = "NFC-Code-hier-einlesen"; // Hier NFC-Code einlesen oder generieren
+      var nfcCode = document.getElementById("nfcInput").value;
 
       var csvContent = "Name,NFC-Code\n" + name + "," + nfcCode + "\n";
       var encodedUri = encodeURI("data:text/csv;charset=utf-8," + csvContent);
