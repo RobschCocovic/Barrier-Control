@@ -89,3 +89,6 @@ h2, h3, p, ul, li {
     min-width: 196px;
   }
 }
+label{
+  color: white;
+}

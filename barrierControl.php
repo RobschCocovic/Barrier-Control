@@ -1,5 +1,19 @@
 <?php
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    $nfcCode = $_POST['nfcCode'];
+  
+    $csvContent = "Name,NFC-Code\n" . $name . "," . $nfcCode . "\n";
+    $encodedUri = "data:text/csv;charset=utf-8," . urlencode($csvContent);
+    
+    header("Content-Type: application/csv");
+    header("Content-Disposition: attachment; filename=export.csv");
+    echo $csvContent;
+    exit();
+  }
+
+
 // Klasse für Kunden
 class Customer {
     public $customer_number;

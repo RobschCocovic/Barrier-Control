@@ -6,26 +6,50 @@
 
 </head>
 <body>
+  <div class="container"></div>
   <h1>Barrier-Control</h1>
-
-  <form id="exportForm">
-    <label for="nameInput">Name:</label>
-    <input type="text" id="nameInput" required><br><br>
-    <label for="nfcInput">NFC-Code:</label>
-    <input type="text" id="nfcInput" required><br><br>
+    <!--• Kunden werden uber eine Kundennummer identifiziert ¨
+• Kunden haben einen Vorname und einen Nachnamen
+• NFC-User weden uber Loxone zur Verf ¨ ugung gestellt, gehen Sie daher vorerst von einer fertigen Liste an ¨
+Usern aus
+• Es soll festgehalten werden, ab wann einem Kunden ein NFC-User zugeordnet wurde.
+• Es soll festgehalten werden, wann diese Zuordnung wieder endet (Ablaufdatum).
+1
+INFORMATION SYSTEMS Third Class
+• Aus Archivgrunden sollen Kunden nur archiviert, aber nicht gel ¨ ¨oscht werden, daher sehen sie ain aktiv/inaktivFeld vor.
+• Als Datenbackend k¨onnen Sie wahlweise CSV oder JSON Dateien, MongoDB als dokumentenorientierte Datenbank oder MariaDB als SQL-Datenbank w¨ahlen; strukturieren Sie ihr Programm so, dass dies
+m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
+-->
     
     <!--Button für das Exportieren der Values-->
-  <button class="button" role="button" onclick="exportCSV()"><span class="text">Export to CSV </span></button>
+ <!-- <button class="button" role="button" onclick="exportCSV()"><span class="text">Export to CSV </span></button>-->
+  
 
+  
+ <form id="exportForm" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" name="name" required><br><br>
+    <label for="nfcInput">NFC-Code:</label>
+    <input type="text" id="nfcInput" name="nfcCode" required><br><br>
+    <label for="dateInput">Datum:</label>
+    <input type="date" id="dateInput" name="date" required><br><br>
+    
+  <button class="button" role="button" onclick="deleteMember()"><span class="text">Delete Member </span></button>
+  <button class="button" role="button" onclick="exportCSV()"><span class="text">Delete NFC-Code </span></button>
+  <button class="button" role="button" onclick="exportCSV()"><span class="text">Delete All </span></button>
+  <button class="button" role="button" onclick="exportCSV()"><span class="text">Showlist </span></button>
+
+    <!-- Button für das Exportieren der Values -->
+    <button class="button" type="submit" role="button"><span class="text">Export to CSV</span></button>
   </form>
-
-  <!--Funktion für den Button-->
+  </form>
   <script>
     function exportCSV() {
       var name = document.getElementById("nameInput").value;
       var nfcCode = document.getElementById("nfcInput").value;
+      var date = document.getElementById("dateInput").value;
 
-      var csvContent = "Name,NFC-Code\n" + name + "," + nfcCode + "\n";
+      var csvContent = "Name,NFC-Code,Date\n" + name + "," + nfcCode + "," + date + "\n";
       var encodedUri = encodeURI("data:text/csv;charset=utf-8," + csvContent);
       var link = document.createElement("a");
       link.setAttribute("href", encodedUri);
@@ -34,5 +58,6 @@
       link.click();
     }
   </script>
+
 </body>
 </html>
