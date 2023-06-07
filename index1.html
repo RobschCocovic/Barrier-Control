@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kundenverwaltung</title>
+  <style>
+    /* CSS-Styling für die Kundenliste */
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Kundenverwaltung</h1>
+
+  <h2>Kunden erstellen</h2>
+  <form id="createCustomerForm">
+    <label for="customerName">Name:</label>
+    <input type="text" id="customerName" required><br><br>
+
+    <button type="submit">Kunden erstellen</button>
+  </form>
+
+  <h2>Kunden NFC-User zuordnen</h2>
+  <form id="assignNfcUserForm">
+    <label for="customerSelect">Kunde:</label>
+    <select id="customerSelect" required>
+      <option value="" disabled selected>Bitte wählen</option>
+    </select><br><br>
+
+    <label for="nfcUser">NFC-User:</label>
+    <input type="text" id="nfcUser" required><br><br>
+
+    <button type="submit">NFC-User zuordnen</button>
+  </form>
+
+  <h2>Kunden NFC-User entfernen</h2>
+  <form id="removeNfcUserForm">
+    <label for="customerSelect2">Kunde:</label>
+    <select id="customerSelect2" required>
+      <option value="" disabled selected>Bitte wählen</option>
+    </select><br><br>
+
+    <button type="submit">NFC-User entfernen</button>
+  </form>
+
+  <h2>Kundenliste</h2>
+  <ul id="customerList"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
