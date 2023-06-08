@@ -87,7 +87,8 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   <script src="barrierControl.php">
   
     function exportCSV() {
-      var name = document.getElementById("nameInput").value;
+      var vname = document.getElementById("vnameInput").value;
+      var nname = document.getElementById("nnameInput").value;
       var nfcCode = document.getElementById("nfcInput").value;
       var date = document.getElementById("dateInput").value;
 
@@ -98,6 +99,13 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
       link.setAttribute("download", "export.csv");
       document.body.appendChild(link);
       link.click();
+    }
+
+    function saveConfig() {
+      var vname = document.getElementById("vnameInput").value;
+      var nname = document.getElementById("nnameInput").value;
+      var nfcCode = document.getElementById("nfcInput").value;
+      var date = document.getElementById("dateInput").value;
     }
   </script>
 
