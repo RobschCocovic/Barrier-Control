@@ -6,7 +6,7 @@
 
 </head>
 <body>
-  <div class="container"></div>
+  <div class="container1"></div>
   <h1>Barrier-Control</h1>
     <!--• Kunden werden uber eine Kundennummer identifiziert ¨
 • Kunden haben einen Vorname und einen Nachnamen
@@ -59,7 +59,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 </div>
 
 <div id="safeConfig">
-  <button class="button" role="button" onclick="safeConfig()"><span class="text">Safe</span></button>
+  <button class="button" role="button" onclick="openNewPage()"><span class="text">Safe</span></button>
 </div>
 
 <div id="divDeleteMember">
@@ -85,7 +85,11 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 
     <!-- Button für das Exportieren der Values -->
   <script src="barrierControl.php">
-  
+    
+    function openNewPage() {
+      window.location.href = "showList.html";
+    }
+
     function exportCSV() {
       var vname = document.getElementById("vnameInput").value;
       var nname = document.getElementById("nnameInput").value;
