@@ -145,7 +145,7 @@ label{
 
 #divDeleteMember {
   position: relative;
-  top: auto;
+  top: 200px;
   left: auto;
   border: 2px solid red;
   display: inline-block;
@@ -184,4 +184,17 @@ label{
   width: 200px; 
   height: 65px; 
   margin-right: 10px; 
+}
+#safeConfig{
+  position: relative;
+  top: 200px;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+
+
+
 }
