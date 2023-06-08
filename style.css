@@ -92,3 +92,96 @@ h2, h3, p, ul, li {
 label{
   color: white;
 }
+#divVName {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+
+#divNName {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+
+#divNFCCode {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+#divDeleteAll{
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+#divDate {
+  position: relative;
+  top: auto;
+  left: auto;
+  position: fixed;
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+
+#divDeleteMember {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 220px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+
+#divDeleteNFCCode {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 250px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+
+#divShowList {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+}
+#divExportCSV {
+  position: relative;
+  top: auto;
+  left: auto;
+  border: 2px solid red;
+  display: inline-block;
+  width: 200px; 
+  height: 65px; 
+  margin-right: 10px; 
+}

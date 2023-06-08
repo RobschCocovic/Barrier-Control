@@ -26,24 +26,63 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   
 
   
- <form id="exportForm" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <label for="nameInput">Name:</label>
-    <input type="text" id="nameInput" name="name" placeholder="Max Mustermann" required><br><br>
+ <div id="divVName">
+  <form id="createVName">
+    <label for="vnameInput">Vorname:</label>
+    <input type="text" id="vnameInput" name="vname" placeholder="Max " required>
+    <button class="button"type="button">Click Me!</button><br><br>
+  </form>
+</div>
+
+<div id="divNName">
+  <form id="createNName">
+    <label for="nnameInput">Nachname:</label>
+    <input type="text" id="nnameInput" name="nname" placeholder="Mustermann" required>
+    <button class="button"type="button">Click Me!</button><br><br>
+  </form>
+</div>
+
+<div id="divNFCCode">
+  <form id="createNfC-Code">
     <label for="nfcInput">NFC-Code:</label>
-    <input type="text" id="nfcInput" name="nfcCode" placeholder="NFC-Code" required><br><br>
+    <input type="text" id="nfcInput" name="nfcCode" placeholder="NFC-Code" required>
+    <button class="button" type="button">Click Me!</button><br><br>
+  </form>
+</div>
+
+<div id="divDate">
+  <form id="createDate">
     <label for="dateInput">Datum:</label>
-    <input type="date" id="dateInput" name="date" required><br><br>
-    
+    <input type="date" id="dateInput" name="date" required>
+    <button class="button" type="button">Click Me!</button><br><br>
+  </form>
+</div>
+
+<div id="divDeleteMember">
   <button class="button" role="button" onclick="deleteMember()"><span class="text">Delete Member </span></button>
-  <button class="button" role="button" onclick="exportCSV()"><span class="text">Delete NFC-Code </span></button>
-  <button class="button" role="button" onclick="exportCSV()"><span class="text">Delete All </span></button>
-  <button class="button" role="button" onclick="exportCSV()"><span class="text">Showlist </span></button>
+</div>
+
+<div id="divDeleteNFCCode">
+  <button class="button" role="button" onclick="deleteNFCCode()"><span class="text">Delete NFC-Code </span></button>
+</div>
+
+<div id="divDeleteAll">
+  <button class="button" role="button" onclick="deleteAll()"><span class="text">Delete All </span></button>
+</div>
+
+<div id="divShowList">
+  <button class="button" role="button" onclick="showList()"><span class="text">Showlist </span></button>
+</div>
+
+<div id="divExportCSV">
+  <button class="button" role="button" onclick="exportCSV()"><span class="text">Export CSV </span></button>
+</div>
+
+
 
     <!-- Button für das Exportieren der Values -->
-    <button class="button" type="submit" role="button"><span class="text">Export to CSV</span></button>
-  </form>
-  </form>
-  <script>
+  <script src="barrierControl.php">
+  
     function exportCSV() {
       var name = document.getElementById("nameInput").value;
       var nfcCode = document.getElementById("nfcInput").value;
