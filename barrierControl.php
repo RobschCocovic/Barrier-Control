@@ -13,33 +13,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
   }
 
+  //Verbindung zur Datenbank wird Herrgestellt
+  $database = new ConnectToDatabase("localhost", "root", "htl", "barrierControlDatabase");
+  $database->connect();
+  $conn = $database->getConnection();
 
-// Klasse für Kunden
-class Customer {
-    public $customer_number;
-    public $first_name;
-    public $last_name;
-    public $nfc_user;
 
-    public function __construct($customer_number, $first_name, $last_name) {
-        $this->customer_number = $customer_number;
-        $this->first_name = $first_name;
-        $this->last_name = $last_name;
-        $this->nfc_user = null;
+
+function deleteAll($conn) {
+    $sql1 = "DELETE FROM Customer";
+    $sql2 = "DELETE FROM NFCUser";
+
+    if ($conn->query($sql1) === TRUE) {
+        echo "Alle Tupel aus der Tabelle Customer wurden erfolgreich gelöscht.";
+    } else {
+        echo "Fehler beim Löschen der Tupel: " . $conn->error;
+    }
+    
+    if ($conn->query($sql2) === TRUE) {
+        echo "Alle Tupel aus der Tabelle NFCUser wurden erfolgreich gelöscht.";
+    } else {
+        echo "Fehler beim Löschen der Tupel: " . $conn->error;
     }
 }
 
-// Klasse für NFC-User
-class NFCUser {
-    public $user_id;
-    public $start_date;
-    public $end_date;
+function InsertMember($firstName, $lastName, $customerNum, $conn) {
+    $sql = "INSERT INTO Customer (firstName, lastName, customerNum)
+            VALUES ('$firstName', '$lastName', '$customerNum')";
 
-    public function __construct($user_id) {
-        $this->user_id = $user_id;
-        $this->start_date = null;
-        $this->end_date = null;
+    if ($conn->query($sql) === TRUE) {
+        echo "Kunde erfolgreich erstellt.";
+    } else {
+        echo "Fehler beim Erstellen des Kunden: " . $conn->error;
     }
 }
+
+
+
+
+
 
 ?>
