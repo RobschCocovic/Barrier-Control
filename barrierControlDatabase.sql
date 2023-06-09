@@ -18,6 +18,6 @@ CREATE TABLE NFCUser (
 );
 
 
-INSERT INTO Customer (customerID, firstName, lastName) VALUES (1,'testKunde1', 'TestKunde1');
+INSERT INTO Customer (customerID, firstName, lastName) VALUES (1,'testKunde123', 'TestKunde123');
 
 INSERT INTO NFCUser (customerID, von, bis, NFCNum) VALUES (1, '2023-06-01', '2023-06-30', 98765);
