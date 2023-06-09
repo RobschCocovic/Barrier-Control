@@ -59,7 +59,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 </div>
 
 <div id="safeConfig">
-  <button class="button" role="button" onclick="openNewPage()"><span class="text">Safe</span></button>
+  <button class="button" role="button" onclick="insertMember()"><span class="text">Safe</span></button>
 </div>
 
 <div id="divDeleteMember">
@@ -74,8 +74,18 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   <button class="button" role="button" onclick="deleteAll()"><span class="text">Delete All </span></button>
 </div>
 
+<?php
+  if(isset($_POST['showList'])){
+    echo "asddasd";
+    showList($conn);
+}
+?>
+
 <div id="divShowList">
-  <button class="button" role="button" onclick="showList()"><span class="text">Showlist </span></button>
+  <form method="post" >
+    <input type="submit" name="showList" value="Show List">
+  </form> 
+  
 </div>
 
 <div id="divExportCSV">
@@ -83,34 +93,9 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 </div>
 
 
-    <!-- Button für das Exportieren der Values -->
-  <script src="barrierControl.php">
+
+  <script>
     
-    function openNewPage() {
-      window.location.href = "showList.html";
-    }
-
-    function exportCSV() {
-      var vname = document.getElementById("vnameInput").value;
-      var nname = document.getElementById("nnameInput").value;
-      var nfcCode = document.getElementById("nfcInput").value;
-      var date = document.getElementById("dateInput").value;
-
-      var csvContent = "Name,NFC-Code,Date\n" + name + "," + nfcCode + "," + date + "\n";
-      var encodedUri = encodeURI("data:text/csv;charset=utf-8," + csvContent);
-      var link = document.createElement("a");
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "export.csv");
-      document.body.appendChild(link);
-      link.click();
-    }
-
-    function saveConfig() {
-      var vname = document.getElementById("vnameInput").value;
-      var nname = document.getElementById("nnameInput").value;
-      var nfcCode = document.getElementById("nfcInput").value;
-      var date = document.getElementById("dateInput").value;
-    }
   </script>
 
 </body>
