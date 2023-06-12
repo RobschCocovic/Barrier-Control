@@ -6,9 +6,12 @@
 
 </head>
 <body>
-  <div class="container1"></div>
   <h1>Barrier-Control</h1>
-    <!--• Kunden werden uber eine Kundennummer identifiziert ¨
+  <div class="container3"></div>
+    <!--•
+      Aufgabenstellung
+
+   Kunden werden uber eine Kundennummer identifiziert ¨
 • Kunden haben einen Vorname und einen Nachnamen
 • NFC-User weden uber Loxone zur Verf ¨ ugung gestellt, gehen Sie daher vorerst von einer fertigen Liste an ¨
 Usern aus
@@ -26,77 +29,63 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   
 
   
- <div id="divVName">
-  <form id="createVName">
-    <label for="vnameInput">Vorname:</label>
-    <input type="text" id="vnameInput" name="vname" placeholder="Max " required>
-    
-  </form>
+ <div class="container4">
+  <div id="divVName">
+    <form id="createVName">
+      <label for="vnameInput">Vorname:</label>
+      <input type="text" id="vnameInput" name="vname" placeholder="Max " required>
+    </form>
+  </div>
+
+  <div id="divNName">
+    <form id="createNName">
+      <label for="nnameInput">Nachname:</label>
+      <input type="text" id="nnameInput" name="nname" placeholder="Mustermann" required>
+    </form>
+  </div>
+
+  <div id="divNFCCode">
+    <form id="createNfC-Code">
+      <label for="nfcInput">NFC-Code:</label>
+      <input type="text" id="nfcInput" name="nfcCode" placeholder="NFC-Code" required>
+    </form>
+  </div>
+
+  <div id="divDate">
+    <form id="createDate">
+      <label for="dateInput">Datum:</label>
+      <input type="date" id="dateInput" name="date" required>
+    </form>
+  </div>
+
+  <div class="container2">
+    <div id="safeConfig">
+      <button class="button" role="button" onclick="insertMember()"><span class="text">Safe</span></button>
+    </div>
+
+    <div id="divDeleteMember">
+      <button class="button" role="button" onclick="deleteMember()"><span class="text">Delete Member </span></button>
+    </div>
+
+    <div id="divDeleteNFCCode">
+      <button class="button" role="button" onclick="deleteNFCCode()"><span class="text">Delete NFC-Code </span></button>
+    </div>
+
+    <div id="divDeleteAll">
+      <button class="button" role="button" onclick="deleteAll()"><span class="text">Delete All </span></button>
+    </div>
+
+    <div id="divShowList" class="button">
+      <form method="post">
+        <input class="button" type="submit" name="showList" value="Show List" >
+      </form>
+    </div>
+
+    <div id="divExportCSV">
+      <button class="button" role="button" onclick="exportCSV()"><span class="text">Export CSV </span></button>
+    </div>
+  </div>
 </div>
-
-<div id="divNName">
-  <form id="createNName">
-    <label for="nnameInput">Nachname:</label>
-    <input type="text" id="nnameInput" name="nname" placeholder="Mustermann" required>
-   
-  </form>
-</div>
-
-<div id="divNFCCode">
-  <form id="createNfC-Code">
-    <label for="nfcInput">NFC-Code:</label>
-    <input type="text" id="nfcInput" name="nfcCode" placeholder="NFC-Code" required>
-    
-  </form>
-</div>
-
-<div id="divDate">
-  <form id="createDate">
-    <label for="dateInput">Datum:</label>
-    <input type="date" id="dateInput" name="date" required>
-    
-  </form>
-</div>
-
-<div id="safeConfig">
-  <button class="button" role="button" onclick="insertMember()"><span class="text">Safe</span></button>
-</div>
-
-<div id="divDeleteMember">
-  <button class="button" role="button" onclick="deleteMember()"><span class="text">Delete Member </span></button>
-</div>
-
-<div id="divDeleteNFCCode">
-  <button class="button" role="button" onclick="deleteNFCCode()"><span class="text">Delete NFC-Code </span></button>
-</div>
-
-<div id="divDeleteAll">
-  <button class="button" role="button" onclick="deleteAll()"><span class="text">Delete All </span></button>
-</div>
-
-<?php
-  if(isset($_POST['showList'])){
-    echo "asddasd";
-    showList($conn);
-}
-?>
-
-<div id="divShowList">
-  <form method="post" >
-    <input type="submit" name="showList" value="Show List">
-  </form> 
-  
-</div>
-
-<div id="divExportCSV">
-  <button class="button" role="button" onclick="exportCSV()"><span class="text">Export CSV </span></button>
-</div>
-
-
-
-  <script>
-    
-  </script>
 
 </body>
 </html>
