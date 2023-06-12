@@ -213,7 +213,7 @@ label{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 10%;
   flex-direction: column;
 }
 
@@ -224,8 +224,8 @@ label{
 }
 
 .container2 > div {
-  flex: 0 0 200px;
+  flex-grow: 1;
   height: 65px;
   margin: 10px;
-  border: 2px solid red;
+  max-width: 200px;
 }
