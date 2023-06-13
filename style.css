@@ -229,9 +229,3 @@ label{
   margin: 10px;
   max-width: 200px;
 }
-#mybutton{
-  position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 999;
-}

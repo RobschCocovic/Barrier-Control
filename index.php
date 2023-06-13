@@ -43,6 +43,13 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
     </form>
   </div>
 
+  <div id="divID">
+    <form id="createID">
+      <label for="IdInput">ID:</label>
+      <input type="text" id="IdInput" name="id" placeholder="123456ABCD" required>
+    </form>
+  </div>
+
   <div id="divNFCCode">
     <form id="createNfC-Code">
       <label for="nfcInput">NFC-Code:</label>
@@ -76,7 +83,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 
     <div id="divShowList" class="button">
       <form method="post">
-        <input class="button" type="submit" name="showList" value="Show List" >
+        <input class="button" type="submit" name="showList" value="Show List" <span class="text">Delete All </span>>
       </form>
     </div>
 
@@ -86,7 +93,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   </div>
 </div>
 
-<button  id="mybutton" role="button" onclick="openNewPage()"><span class="text">Jump Back</span></button>
+<button  class="button" role="button" onclick="openNewPage()"><span class="text">Jump Back</span></button>
   <script>
     function openNewPage() {
       window.location.href = "introduction.html";
