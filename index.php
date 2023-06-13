@@ -4,12 +4,15 @@
 <head>
   <title>Barrier-Control</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 
 <body>
   <div class="container1"></div>
   <h1>Barrier-Control</h1>
+
+
+
+
   <!--• Kunden werden uber eine Kundennummer identifiziert ¨
 • Kunden haben einen Vorname und einen Nachnamen
 • NFC-User weden uber Loxone zur Verf ¨ ugung gestellt, gehen Sie daher vorerst von einer fertigen Liste an ¨
@@ -25,6 +28,8 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 
   <!--Button für das Exportieren der Values-->
   <!-- <button class="button" role="button" onclick="exportCSV()"><span class="text">Export to CSV </span></button>-->
+
+
 
 
   <div class="container4">
@@ -87,7 +92,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 
     <div id="divDeleteAll">
       <form method="post">
-        <input type="submit" name="deleteAll" value="delte all">
+        <input type="submit" name="deleteAll" value="delete all">
       </form>
     </div>
 
@@ -99,7 +104,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 
     <div id="divExportCSV">
       <form method="post">
-        <input type="submit" name="exportCSV" value="export CSV">
+        <input type="submit" name="exportCSV" value="export CSV" >
       </form>
     </div>
   </div>
@@ -108,8 +113,16 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   <?php
   require_once("barrierControl.php");
   ?>
-
-
+  <div id="bottomButton">
+    <button class="button" role="button" onclick="openNewPage()">
+      <span class="text">Jump Back!</span>
+    </button>
+    <script>
+      function openNewPage() {
+        window.location.href = "introduction.html";
+      }
+    </script>
+  </div>
 </body>
 
 </html>
