@@ -113,16 +113,20 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   <?php
   require_once("barrierControl.php");
   ?>
-  <div id="bottomButton">
-    <button class="button" role="button" onclick="openNewPage()">
-      <span class="text">Jump Back!</span>
-    </button>
-    <script>
-      function openNewPage() {
-        window.location.href = "introduction.html";
-      }
-    </script>
-  </div>
+  <div class="button-container">
+  <button class="button" role="button" onclick="jumpBack()">
+    <span class="text">Jump Back!</span>
+  </button>
+
+  <button class="button" onclick="window.location.reload();">
+    <span class="text">Reload Page</span>
+  </button>
+</div>
+<script>
+  function jumpBack() {
+    window.history.back();
+  }
+</script>
 </body>
 
 </html>

@@ -295,3 +295,11 @@ label {
   top: 90%;
   left: 0%;
 }
+.button-container {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
