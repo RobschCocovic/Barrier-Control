@@ -135,4 +135,3 @@ function exportCSV($conn) {
 
 // Datenbankverbindung schließen
 $conn->close();
-?>

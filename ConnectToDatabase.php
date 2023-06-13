@@ -33,5 +33,3 @@ class ConnectToDatabase {
         return $this->conn;
     }
 }
-
-?>

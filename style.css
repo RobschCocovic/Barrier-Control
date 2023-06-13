@@ -1,10 +1,22 @@
 a {
   text-decoration: none;
   color: inherit;
-  background-image: linear-gradient(90deg, #AF40FF 0%, #5B42F3 10%, #00DDEB 20%, #AF40FF 30%, #5B42F3 40%, #00DDEB 50%,#AF40FF 60%, #5B42F3 70%, #00DDEB 80%,#AF40FF 100%);
+  background-image: linear-gradient(
+    90deg,
+    #af40ff 0%,
+    #5b42f3 10%,
+    #00ddeb 20%,
+    #af40ff 30%,
+    #5b42f3 40%,
+    #00ddeb 50%,
+    #af40ff 60%,
+    #5b42f3 70%,
+    #00ddeb 80%,
+    #af40ff 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-} 
+}
 
 .container3 {
   position: fixed;
@@ -33,35 +45,62 @@ p img {
   height: 30px;
   width: 30px;
   margin-right: 10px;
-  
 }
 h1 {
   position: sticky;
   top: 0;
   text-align: center;
-  background-image: linear-gradient(90deg, #AF40FF 0%, #5B42F3 10%, #00DDEB 20%, #AF40FF 30%, #5B42F3 40%, #00DDEB 50%,#AF40FF 60%, #5B42F3 70%, #00DDEB 80%,#AF40FF 100%);
+  background-image: linear-gradient(
+    90deg,
+    #af40ff 0%,
+    #5b42f3 10%,
+    #00ddeb 20%,
+    #af40ff 30%,
+    #5b42f3 40%,
+    #00ddeb 50%,
+    #af40ff 60%,
+    #5b42f3 70%,
+    #00ddeb 80%,
+    #af40ff 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-h2, h3, h4 {
-  background-image: linear-gradient(90deg, #AF40FF 0%, #5B42F3 10%, #00DDEB 20%, #AF40FF 30%, #5B42F3 40%, #00DDEB 50%,#AF40FF 60%, #5B42F3 70%, #00DDEB 80%,#AF40FF 100%);
+h2,
+h3,
+h4 {
+  background-image: linear-gradient(
+    90deg,
+    #af40ff 0%,
+    #5b42f3 10%,
+    #00ddeb 20%,
+    #af40ff 30%,
+    #5b42f3 40%,
+    #00ddeb 50%,
+    #af40ff 60%,
+    #5b42f3 70%,
+    #00ddeb 80%,
+    #af40ff 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
- p, ul, li {
-  color: white; 
+p,
+ul,
+li {
+  color: white;
 }
 
+input[type="submit"],
 .button {
-  
   align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
@@ -82,8 +121,20 @@ h2, h3, h4 {
 .button:hover {
   outline: 0;
 }
-
+input[type="submit"]:active,
+input[type="submit"]:hover {
+  outline: 0;
+}
 .button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+input[type="submit"] span {
   background-color: rgb(5, 6, 45);
   padding: 16px 24px;
   border-radius: 6px;
@@ -95,16 +146,26 @@ h2, h3, h4 {
 .button:hover span {
   background: none;
 }
-
+input[type="submit"]:hover span {
+  background: none;
+}
 @media (min-width: 768px) {
   .button {
     font-size: 24px;
     min-width: 196px;
   }
 }
-label{
+
+@media (min-width: 768px) {
+  input[type="submit"] {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+label {
   color: white;
 }
+
 /*#divVName {
   position: relative;
   top: auto;
