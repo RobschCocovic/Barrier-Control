@@ -3,7 +3,6 @@
 <head>
   <title>Barrier-Control</title>
  <link rel="stylesheet" type="text/css" href="style.css">
- <?php include 'functions.php'; ?>
 </head>
 <body>
   <h1>Barrier-Control</h1>
@@ -96,7 +95,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
 
 
 <?php
-  require_on("barrierControl.php");
+  require_once("barrierControl.php");
   ?>
 
 </body>

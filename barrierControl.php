@@ -1,5 +1,5 @@
 <?php
-    require_once 'ConnectToDatabase.php';
+    require_once ("ConnectToDatabase.php");
 /*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $nfcCode = $_POST['nfcCode'];
