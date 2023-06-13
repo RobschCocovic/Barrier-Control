@@ -94,5 +94,10 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
     }
   </script>
 
+
+<?php
+  require_on("barrierControl.php");
+  ?>
+
 </body>
 </html>
