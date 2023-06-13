@@ -1,5 +1,5 @@
 <?php
-
+    require_once 'ConnectToDatabase.php';
 /*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
     $nfcCode = $_POST['nfcCode'];
@@ -14,13 +14,13 @@
   }*/
 
   //Verbindung zur Datenbank wird Herrgestellt
-  $database = new ConnectToDatabase("localhost", "root", "htl", "barrierControlDatabase");
+  $database = new ConnectToDatabase("localhost", "barrierControlDatabase", "root", "");
   $database->connect();
   $conn = $database->getConnection();
 
 
   if(isset($_POST['showList'])){
-    echo "asddasd";
+    echo "ffffffffffffffffffffffffffffffffffffff";
     showList($conn);
   }
 
@@ -53,29 +53,31 @@ function InsertMember($firstName, $lastName, $customerNum, $conn) {
     }
 }
 function showList($conn) {
-    echo "adfadfadfadf";
-    /*$sql = "SELECT Customer.*, NFCUser.* FROM Customer LEFT JOIN NFCUser ON Customer.customerID = NFCUser.customerID";
+    echo "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk";
+    $sql = "SELECT C.customerID, C.firstName, C.lastName, N.von, N.bis, N.NFCNum FROM Customer C JOIN NFCUser N ON C.customerID = N.customerID;";
    
-   $result = $conn->query($sql);
+    $result = $conn->query($sql);
 
- 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "Kunden-ID: " . $row["customerID"] . "<br>";
             echo "Vorname: " . $row["firstName"] . "<br>";
             echo "Nachname: " . $row["lastName"] . "<br>";
-            echo "Kundennummer: " . $row["customerNum"] . "<br>";
 
-            echo "NFC von: " . $row["von"] . "<br>";
-            echo "NFC bis: " . $row["bis"] . "<br>";
-            echo "NFC-Nummer: " . $row["NFCNum"] . "<br>";
+            if (isset($row["von"]) && isset($row["bis"]) && isset($row["NFCNum"])) {
+                echo "NFC von: " . $row["von"] . "<br>";
+                echo "NFC bis: " . $row["bis"] . "<br>";
+                echo "NFC-Nummer: " . $row["NFCNum"] . "<br>";
+            }
 
             echo "<br>";
         }
     } else {
         echo "Keine Kunden mit zugehörigen NFC-Usern gefunden.";
-    }*/
+    }
 }
+
+
 
 
 

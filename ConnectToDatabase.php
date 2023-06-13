@@ -1,23 +1,23 @@
 <?php
 
 class ConnectToDatabase {
-    private $servername;
+    private $host;
     private $username;
     private $password;
-    private $dbname;
+    private $dbName;
     private $conn;
 
 
-    public function __construct($servername, $username, $password, $dbname) {
-        $this->servername = $servername;
+    public function __construct($host, $dbName, $username, $password) {
+        $this->host = $host;
+        $this->dbName = $dbName;
         $this->username = $username;
         $this->password = $password;
-        $this->dbname = $dbname;
     }
 
     // Methode zum Herstellen der Verbindung zur Datenbank
     public function connect() {
-        $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbName);
         if ($this->conn->connect_error) {
             die("Verbindung zur Datenbank fehlgeschlagen: " . $this->conn->connect_error);
         }
