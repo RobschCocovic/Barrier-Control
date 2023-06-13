@@ -86,7 +86,7 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   </div>
 </div>
 
-<button class="button" role="button" onclick="openNewPage()"><span class="text">Jump Back</span></button>
+<button  id="mybutton" role="button" onclick="openNewPage()"><span class="text">Jump Back</span></button>
   <script>
     function openNewPage() {
       window.location.href = "introduction.html";
