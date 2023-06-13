@@ -3,14 +3,12 @@
 <head>
   <title>Barrier-Control</title>
  <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
+  <div class="container1"></div>
   <h1>Barrier-Control</h1>
-  <div class="container3"></div>
-    <!--•
-      Aufgabenstellung
-
-   Kunden werden uber eine Kundennummer identifiziert ¨
+    <!--• Kunden werden uber eine Kundennummer identifiziert ¨
 • Kunden haben einen Vorname und einen Nachnamen
 • NFC-User weden uber Loxone zur Verf ¨ ugung gestellt, gehen Sie daher vorerst von einer fertigen Liste an ¨
 Usern aus
@@ -28,82 +26,85 @@ m¨oglichst einfach auf ein anderes Backend umgestellt werden kann.
   
 
   
- <div class="container4">
-  <div id="divVName">
-    <form id="createVName">
-      <label for="vnameInput">Vorname:</label>
-      <input type="text" id="vnameInput" name="vname" placeholder="Max " required>
-    </form>
-  </div>
-
-  <div id="divNName">
-    <form id="createNName">
-      <label for="nnameInput">Nachname:</label>
-      <input type="text" id="nnameInput" name="nname" placeholder="Mustermann" required>
-    </form>
-  </div>
-
-  <div id="divID">
-    <form id="createID">
-      <label for="IdInput">ID:</label>
-      <input type="text" id="IdInput" name="id" placeholder="123456ABCD" required>
-    </form>
-  </div>
-
-  <div id="divNFCCode">
-    <form id="createNfC-Code">
-      <label for="nfcInput">NFC-Code:</label>
-      <input type="text" id="nfcInput" name="nfcCode" placeholder="NFC-Code" required>
-    </form>
-  </div>
-
-  <div id="divDate">
-    <form id="createDate">
-      <label for="dateInput">Datum:</label>
-      <input type="date" id="dateInput" name="date" required>
-    </form>
-  </div>
-
-  <div class="container2">
-    <div id="safeConfig">
-      <button class="button" role="button" onclick="insertMember()"><span class="text">Safe</span></button>
-    </div>
-
-    <div id="divDeleteMember">
-      <button class="button" role="button" onclick="deleteMember()"><span class="text">Delete Member </span></button>
-    </div>
-
-    <div id="divDeleteNFCCode">
-      <button class="button" role="button" onclick="deleteNFCCode()"><span class="text">Delete NFC </span></button>
-    </div>
-
-    <div id="divDeleteAll">
-      <button class="button" role="button" onclick="deleteAll()"><span class="text">Delete All </span></button>
-    </div>
-
-    <div id="divShowList" class="button">
-      <form method="post">
-        <input class="button" type="submit" name="showList" value="Show List" <span class="text">Delete All </span>>
-      </form>
-    </div>
-
-    <div id="divExportCSV">
-      <button class="button" role="button" onclick="exportCSV()"><span class="text">Export CSV </span></button>
-    </div>
-  </div>
+ <div id="divVName">
+  <form id="createVName" method="post" >
+    <label for="vnameInput">Vorname:</label>
+    <input type="text" id="vnameInput" name="vname" placeholder="Max " required>
+    
+  </form>
 </div>
 
-<button  class="button" role="button" onclick="openNewPage()"><span class="text">Jump Back</span></button>
-  <script>
-    function openNewPage() {
-      window.location.href = "introduction.html";
-    }
-  </script>
+<div id="divNName">
+  <form id="createNName" method="post" >
+    <label for="nnameInput">Nachname:</label>
+    <input type="text" id="nnameInput" name="nname" placeholder="Mustermann" required>
+   
+  </form>
+</div>
+
+<div id="divCustomerID">
+  <form id="createCustomerID" method="post" >
+    <label for="CustomerIDInput">Kundennummer</label>
+    <input type="text" id="CustomerIDInput" name="CustomerID" placeholder="CustomerID" required>
+  </form>
+</div>
+
+<div id="divNFCCode">
+  <form id="createNfC-Code" method="post" >
+    <label for="nfcInput">NFC-Code:</label>
+    <input type="text" id="nfcInput" name="NFCCode" placeholder="NFC-Code" required>
+  </form>
+</div>
+
+<div id="divDate">
+  <form id="createDate" method="post" >
+    <label for="dateInput">Datum:</label>
+    <input type="date" id="dateInput" name="date" required>
+    
+  </form>
+</div>
+
+<div id="safeConfig">
+<form method="post" >
+    <input type="submit" name="insertMember" value="Insert Member" >
+  </form> 
+</div>
+
+<div id="divDeleteMember">
+<form method="post" >
+    <input type="submit" name="deleteMember" value="delete Member" >
+  </form> 
+</div>
+
+<div id="divDeleteNFCCode">
+<form method="post" >
+    <input type="submit" name="deleteNFCCode" value="delete NFC Code" >
+  </form> 
+</div>
+
+<div id="divDeleteAll">
+<form method="post" >
+    <input type="submit" name="deleteAll" value="delte all" >
+  </form> 
+</div>
+
+<div id="divShowList">
+  <form method="post" >
+    <input type="submit" name="showList" value="Show List" >
+  </form> 
+</div>
+
+<div id="divExportCSV">
+<form method="post" >
+    <input type="submit" name="exportCSV" value="export CSV" >
+  </form> 
+</div>
 
 
 <?php
   require_once("barrierControl.php");
-  ?>
+?>
+
 
 </body>
 </html>
